@@ -66,7 +66,6 @@
     overflow: hidden;
 
     .user-card-img{
-      background-color: lightgray;
       height: 160px;
     }
 
