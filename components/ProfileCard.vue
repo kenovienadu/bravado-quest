@@ -31,7 +31,7 @@
 
 <script lang="ts">
   import { Component, Prop, Vue } from 'vue-property-decorator';
-  import { IUser } from '@/common/interfaces';
+  import { IProfile } from '@/common/interfaces';
 
   // @ts-ignore
   import TextHighlight from 'vue-text-highlight';
@@ -39,15 +39,15 @@
   @Component({
     components: { TextHighlight }
   })
-  export default class UserCard extends Vue {
-    @Prop() user!: IUser;
+  export default class ProfileCard extends Vue {
+    @Prop() user!: IProfile;
 
     get searchQuery(){
       const searchValue = this.$route.query["search"] as string;
       return searchValue || '';
     }
 
-    get highlightQueries(){
+    get highlightQueries(){ // the text-highlight library needs an array of strings to match
       if(!this.searchQuery.length){
         return [];
       }

@@ -15,7 +15,7 @@
           key-field="email"
           v-slot="{ item }"
         >
-            <user-card :user="item"></user-card>
+          <profile-card :user="item"></profile-card>
         </RecycleScroller>
       </div>
 
@@ -30,7 +30,7 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
   import { userProfiles } from '@/common/data';
-  import { IUser } from '~/common/interfaces';
+  import { IProfile } from '~/common/interfaces';
 
   // @ts-ignore
   import { RecycleScroller } from 'vue-virtual-scroller';
@@ -39,7 +39,7 @@
     components: { RecycleScroller }
   })
   export default class IndexPage extends Vue {
-    profiles: IUser[] = [];
+    profiles: IProfile[] = [];
 
     get searchQuery(){
       const searchValue = this.$route.query["search"] as string;

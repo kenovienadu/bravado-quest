@@ -1,5 +1,5 @@
 
-export interface IUser {
+export interface IProfile {
   name: string
   email: string
   title: string

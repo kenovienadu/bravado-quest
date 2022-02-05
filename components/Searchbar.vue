@@ -13,11 +13,9 @@
 
   @Component
   export default class SearchBar extends Vue {
-    searchValue = '';
-
     handleChange(e: any){
-      const value = e.target.value;
-      const query = {...this.$route.params, search: value}
+      const { value } = e.target;
+      const query = { ...this.$route.params, search: value };
       this.$router.replace({ query });
     }
   }
